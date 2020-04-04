@@ -1,0 +1,11 @@
+UPDATE shl_weiboinfo SET mblog_layer = 0
+UPDATE shl_weiboinfo SET mblog_layer = 1 WHERE mblog_pid='4467217376723326'
+UPDATE shl_weiboinfo SET mblog_layer = 0 WHERE mblog_id='4467217376723326'
+复制表 
+UPDATE shl_weiboinfo SET mblog_layer = 2 WHERE mblog_pid in (SELECT mblog_id from shl_weiboinfo_copy1 where mblog_layer = 1)
+复制表
+update layer = 3
+复制表
+update layer = 4
+复制表
+UPDATE shl_weiboinfo SET mblog_layer = 5 WHERE mblog_id in (SELECT mblog_id from shl_weiboinfo_copy1 where mblog_layer = 0)
