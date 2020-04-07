@@ -44,3 +44,4 @@ if __name__=='__main__':
     g = Graph().loadGraph()
     ranks = getPageRank(g)
     print(ranks)
+    print(len(ranks))
